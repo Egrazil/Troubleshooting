@@ -1,0 +1,24 @@
+This is an issue I have had for years, and the reason I am creating this site, because I could find absolutely 0 solutions or possible issues online.
+
+It has persisted through reinstalls, virus scans, file integrity checks, and more
+
+The #1 symptom is, when selecting the "safely remove hardware and eject media button" in the windows task bar, the window to select media to eject didn't appear for 30 seconds to a minute. This made working on my external nvme drive a pain.
+
+Lets cut to the chase though, the solution.
+The problem turned out to be an extremely old SD, and SD related media reader installed in my pc. It didn't work, so I never used it, and had mostly forgotten about it. I figured it out because I finally watched event viewer while I clicked on the remove media button, and I got disk controller errors showing up. after a little bit of digging, an article mentioned simply having a broken sd card reader, and after disconnecting the interal usb port on my pc, the issues I have been having have (so far) disappeared.
+
+Some symptoms I suspect were caused by this (* means I can confirm they were caused by this issue)
+*delay when opening remove media menu
+*delay when opening file explorer on my pc for the first time, or for the first time in a while
+*very long (several minute) delay when opening disk managment
+semi random (maybe only with an external nvme drive) usb controller crashes (I think thats what every usb device disconnecting and reconnecting is)
+delay with shutting down computer (Eventually I modified the registry to force shutdown at 30 seconds or something)
+delay when right clicking on thumb drives (they might just be old and slow)
+*steam hangs when installing game and opening install device selection window
+7zip hangs when opening window to choose where to extract files
+
+Some things I noticed about my system because of this (they may or may not be problems/symptoms)
+the remove device button doesn't who up in the task bar if you don't have a device plugged in
+device manager has many empty disks (one for each of the ports on the old sd card reader)
+
+I am elated that I have fixed this, and if you are having this same issue, I hope this can help you out too. If you have any other questions, feel free to raise an issue on this repo.
